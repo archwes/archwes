@@ -15,10 +15,10 @@
     --project-bg-color: #fff;
     --project-border-color: #dee2e6;
     --project-text-color: #555;
-    --hero-bg-color: #fff;
-    --about-bg-color: #fff;
+    --hero-bg-color: #f8f9fa;
+    --about-bg-color: #f8f9fa;
     --skills-bg-color: #f8f9fa;
-    --projects-bg-color: #fff;
+    --projects-bg-color: #f8f9fa;
     --contact-bg-color: #f8f9fa;
 
 
@@ -26,7 +26,7 @@
     --dark-bg-color: #212529;
     --dark-text-color: #f8f9fa;
     --dark-heading-color: #fff;
-    --dark-link-color: #66b3ff;  /* Lighter blue for links */
+    --dark-link-color: #66b3ff;
     --dark-link-hover-color: #b3d9ff;
     --dark-button-bg-color: #66b3ff;
     --dark-button-text-color: #212529;
@@ -180,7 +180,7 @@ header nav ul li a:hover {
     height: 3px;
     background-color: #fff;
     margin: 5px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     border-radius: 2px;
 }
 
@@ -493,6 +493,11 @@ body.dark-mode #dark-mode-toggle .fa-sun {
         font-size: 1.25rem;
     }
 
+    /* ADDED THIS: */
+    header h1 {
+        font-size: 1.8rem;
+    }
+
     #hero {
         flex-direction: column;
         padding: 3rem 0;
@@ -538,15 +543,10 @@ body.dark-mode #dark-mode-toggle .fa-sun {
         left: 0;
         background-color: #343a40;
         text-align: center;
-        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-        transform: translateY(-100%);
-        opacity: 0;
     }
 
     .nav-links.active {
         display: flex;
-        transform: translateY(0);
-        opacity: 1;
     }
 
     .nav-links li {
@@ -562,15 +562,6 @@ body.dark-mode #dark-mode-toggle .fa-sun {
         display: block;
     }
 
-    .burger div {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 5px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        border-radius: 2px;
-    }
-
     .line1-active {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -580,7 +571,7 @@ body.dark-mode #dark-mode-toggle .fa-sun {
     }
 
     .line3-active {
-        transform: rotate(45deg) translate(-5px, -6px);
+        transform: rotate(-45deg) translate(-5px, -6px);
     }
 
     .projects-grid{
