@@ -1,0 +1,592 @@
+/* --- CSS Variables (Custom Properties) --- */
+:root {
+    /* Light Mode Colors */
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --heading-color: #212529;
+    --link-color: #007bff;
+    --link-hover-color: #0056b3;
+    --button-bg-color: #007bff;
+    --button-text-color: #fff;
+    --button-hover-bg-color: #0056b3;
+    --border-color: #dee2e6;
+    --skill-bg-color: #fff;
+    --skill-icon-color: #007bff;
+    --project-bg-color: #fff;
+    --project-border-color: #dee2e6;
+    --project-text-color: #555;
+    --hero-bg-color: #fff;
+    --about-bg-color: #fff;
+    --skills-bg-color: #f8f9fa;
+    --projects-bg-color: #fff;
+    --contact-bg-color: #f8f9fa;
+
+
+    /* Dark Mode Colors */
+    --dark-bg-color: #212529;
+    --dark-text-color: #f8f9fa;
+    --dark-heading-color: #fff;
+    --dark-link-color: #66b3ff;  /* Lighter blue for links */
+    --dark-link-hover-color: #b3d9ff;
+    --dark-button-bg-color: #66b3ff;
+    --dark-button-text-color: #212529;
+    --dark-button-hover-bg-color: #b3d9ff;
+    --dark-border-color: #495057;
+    --dark-skill-bg-color: #343a40;
+    --dark-skill-icon-color: #66b3ff;
+    --dark-project-bg-color: #343a40;
+    --dark-project-border-color: #495057;
+    --dark-project-text-color: #f8f9fa;
+    --dark-hero-bg-color: #212529;
+    --dark-about-bg-color: #212529;
+    --dark-skills-bg-color: #212529;
+    --dark-projects-bg-color: #212529;
+    --dark-contact-bg-color: #212529;
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+}
+
+/* --- General Styles --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-size: 18px;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: var(--heading-color);
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--link-color);
+    padding-bottom: 0.5em;
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1.2em;
+    transition: color var(--transition-speed) ease;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease, color var(--transition-speed) ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.button:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: scale(1.05);
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: #343a40;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: top var(--transition-speed) ease;
+}
+
+header h1 {
+    color: #fff;
+    margin: 0;
+}
+
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li a {
+    color: var(--dark-link-color);
+    padding: 0.75rem 1.2rem;
+    display: block;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    border-radius: 5px;
+}
+
+header nav ul li a:hover {
+    background-color: #495057;
+    color: var(--dark-link-hover-color);
+}
+
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Dark Mode Toggle Button Styles */
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    transition: background-color var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #495057;
+}
+
+#dark-mode-toggle .fa-moon {
+    display: inline-block;
+}
+
+#dark-mode-toggle .fa-sun {
+    display: none;
+}
+
+/* --- Hero Section --- */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 0;
+    background-color: var(--hero-bg-color);
+    border-bottom: 2px solid var(--border-color);
+    flex-direction: row-reverse;
+    transition: background-color var(--transition-speed) ease;
+}
+
+#hero .hero-content{
+    flex: 1;
+    padding-right: 4rem;
+    padding-left: 2rem;
+}
+
+#hero .hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+#hero .hero-content p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+}
+
+#hero .hero-image {
+    flex: 0 0 320px;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+#hero .hero-image img {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- About Section --- */
+#about {
+    padding: 4rem 0;
+    background-color: var(--about-bg-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.about-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* --- Skills Section --- */
+#skills {
+    padding: 4rem 0;
+    background-color: var(--skills-bg-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.skill {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--skill-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.skill i {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--skill-icon-color);
+     transition: color var(--transition-speed) ease;
+}
+
+/* --- Projects Section --- */
+#projects {
+    padding: 4rem 0;
+    background-color: var(--projects-bg-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding-top: 2rem;
+}
+
+.project {
+    border: 1px solid var(--project-border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--project-bg-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project h3 {
+    padding: 1rem 1.5rem;
+    margin: 0;
+}
+
+.project p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    margin: 0;
+    font-size: 1rem;
+    color: var(--project-text-color);
+}
+
+.project-links {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+/* --- Contact Section --- */
+#contact {
+    padding: 4rem 0;
+    background-color: var(--contact-bg-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.contact-info {
+    margin-bottom: 3rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.75rem;
+}
+
+.contact-info i {
+    margin-right: 0.75rem;
+    color: var(--link-color);
+}
+
+/* --- Footer --- */
+footer {
+    background: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+/* --- Fix for Header Overlap --- */
+main {
+  padding-top: 72px;
+}
+
+/* --- Dark Mode Styles (applied when body has .dark-mode class) --- */
+body.dark-mode {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: var(--dark-heading-color);
+}
+
+body.dark-mode a {
+    color: var(--dark-link-color);
+}
+
+body.dark-mode a:hover {
+    color: var(--dark-link-hover-color);
+}
+
+body.dark-mode .button {
+    background-color: var(--dark-button-bg-color);
+    color: var(--dark-button-text-color);
+}
+
+body.dark-mode .button:hover {
+    background-color: var(--dark-button-hover-bg-color);
+}
+
+body.dark-mode .skill {
+    background-color: var(--dark-skill-bg-color);
+    border-color: var(--dark-border-color);
+}
+
+body.dark-mode .skill i {
+    color: var(--dark-skill-icon-color);
+}
+
+body.dark-mode .project {
+    background-color: var(--dark-project-bg-color);
+    border-color: var(--dark-project-border-color);
+}
+
+body.dark-mode .project h3,
+body.dark-mode .project p {
+    color: var(--dark-project-text-color);
+}
+
+body.dark-mode #hero {
+    background-color: var(--dark-hero-bg-color);
+}
+
+body.dark-mode #about {
+    background-color: var(--dark-about-bg-color);
+}
+
+body.dark-mode #projects {
+    background-color: var(--dark-projects-bg-color);
+}
+
+body.dark-mode #skills {
+    background-color: var(--dark-skills-bg-color);
+}
+body.dark-mode #contact{
+    background-color: var(--dark-contact-bg-color);
+}
+body.dark-mode #dark-mode-toggle{
+    color: var(--dark-text-color);
+}
+body.dark-mode #dark-mode-toggle .fa-moon {
+    display: none;
+}
+
+body.dark-mode #dark-mode-toggle .fa-sun {
+    display: inline-block;
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 0 15px;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    #hero {
+        flex-direction: column;
+        padding: 3rem 0;
+    }
+
+    #hero .hero-image {
+        flex: 0 0 auto;
+        margin-bottom: 2rem;
+        padding: 15px;
+    }
+
+    #hero .hero-image img {
+       width: 100%;
+       max-width: 250px;
+       max-height: 250px;
+    }
+
+    #hero .hero-content {
+        padding: 0;
+        text-align: center;
+    }
+
+    #hero .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    #hero .hero-content p {
+        font-size: 1.1rem;
+    }
+    #about,
+    #skills,
+    #projects,
+    #contact{
+        padding: 2rem 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #343a40;
+        text-align: center;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-links li {
+        padding: 1rem;
+        border-bottom: 1px solid #495057;
+    }
+
+    .nav-links li a {
+        padding: 0.5rem;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        border-radius: 2px;
+    }
+
+    .line1-active {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .line2-active {
+        opacity: 0;
+    }
+
+    .line3-active {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .projects-grid{
+        grid-template-columns: 1fr;
+    }
+    #dark-mode-toggle {
+    margin-right: 1rem;
+}
+}
