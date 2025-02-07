@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on [TravelEasy](https://github.com/archwes/TravelEasy)<br>👯 I’m looking to collaborate on open-source projects<br>🌱 I’m currently learning ReactJS<br>💬 Ask me about anything!
+🔭 I’m currently working on [TravelEasy](https://github.com/archwes/TravelEasy)<br>👯 I’m looking to collaborate on **open-source projects**<br>🌱 I’m currently learning [ReactJS](https://react.dev/)<br>💬 Ask me about **anything!**
 
 
 ## 🌐 Socials:
