@@ -1,4 +1,4 @@
-# 💫 About Me:
+# 👋 Hi, I'm Wesley!
 🔭 I’m currently working on [TravelEasy](https://github.com/archwes/TravelEasy)<br>
 👯 I’m looking to collaborate on **open-source projects**<br>
 🌱 I’m currently learning **[React](https://react.dev/)** and **InfoSec fundamentals**<br>
