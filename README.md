@@ -1,5 +1,9 @@
 # 💫 About Me:
-🔭 I’m currently working on [TravelEasy](https://github.com/archwes/TravelEasy)<br>👯 I’m looking to collaborate on **open-source projects**<br>🌱 I’m currently learning **[React](https://react.dev/)** and **InfoSec fundamentals**<br>💬 Ask me about **anything!**
+🔭 I’m currently working on [TravelEasy](https://github.com/archwes/TravelEasy)<br>
+👯 I’m looking to collaborate on **open-source projects**<br>
+🌱 I’m currently learning **[React](https://react.dev/)** and **InfoSec fundamentals**<br>
+📖 I'm also completing my degree in Software Engineering at the Federal University of Technology – Paraná (UTFPR)<br>
+💬 Ask me about **anything!**
 
 
 
