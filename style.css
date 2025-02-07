@@ -1,11 +1,4 @@
-/* --- Smooth Scrolling --- */
-html {
-    scroll-behavior: smooth;
-  }
-
-/* --- CSS Variables (Custom Properties) --- */
 :root {
-    /* Light Mode Colors */
     --bg-color: #f8f9fa;
     --text-color: #333;
     --heading-color: #212529;
@@ -26,12 +19,10 @@ html {
     --projects-bg-color: #f8f9fa;
     --contact-bg-color: #f8f9fa;
 
-
-    /* Dark Mode Colors */
     --dark-bg-color: #212529;
     --dark-text-color: #f8f9fa;
     --dark-heading-color: #fff;
-    --dark-link-color: #66b3ff;
+    --dark-link-color: #66b3ff;  /* Lighter blue for links */
     --dark-link-hover-color: #b3d9ff;
     --dark-button-bg-color: #66b3ff;
     --dark-button-text-color: #212529;
@@ -48,11 +39,9 @@ html {
     --dark-projects-bg-color: #212529;
     --dark-contact-bg-color: #212529;
 
-    /* Transitions */
     --transition-speed: 0.3s;
 }
 
-/* --- General Styles --- */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -129,7 +118,6 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* --- Header & Navigation --- */
 header {
     background: #343a40;
     color: #fff;
@@ -189,7 +177,6 @@ header nav ul li a:hover {
     border-radius: 2px;
 }
 
-/* Dark Mode Toggle Button Styles */
 #dark-mode-toggle {
     background: none;
     border: none;
@@ -216,7 +203,6 @@ header nav ul li a:hover {
     display: none;
 }
 
-/* --- Hero Section --- */
 #hero {
     display: flex;
     align-items: center;
@@ -261,7 +247,6 @@ header nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* --- About Section --- */
 #about {
     padding: 4rem 0;
     background-color: var(--about-bg-color);
@@ -274,7 +259,6 @@ header nav ul li a:hover {
     gap: 1.5rem;
 }
 
-/* --- Skills Section --- */
 #skills {
     padding: 4rem 0;
     background-color: var(--skills-bg-color);
@@ -310,7 +294,6 @@ header nav ul li a:hover {
      transition: color var(--transition-speed) ease;
 }
 
-/* --- Projects Section --- */
 #projects {
     padding: 4rem 0;
     background-color: var(--projects-bg-color);
@@ -366,7 +349,6 @@ header nav ul li a:hover {
     margin-top: auto;
 }
 
-/* --- Contact Section --- */
 #contact {
     padding: 4rem 0;
     background-color: var(--contact-bg-color);
@@ -386,7 +368,6 @@ header nav ul li a:hover {
     color: var(--link-color);
 }
 
-/* --- Footer --- */
 footer {
     background: #343a40;
     color: #fff;
@@ -394,12 +375,10 @@ footer {
     padding: 1.5rem 0;
 }
 
-/* --- Fix for Header Overlap --- */
 main {
   padding-top: 72px;
 }
 
-/* --- Dark Mode Styles (applied when body has .dark-mode class) --- */
 body.dark-mode {
     background-color: var(--dark-bg-color);
     color: var(--dark-text-color);
@@ -476,10 +455,6 @@ body.dark-mode #dark-mode-toggle .fa-sun {
     display: inline-block;
 }
 
-
-/* --- Media Queries for Responsiveness --- */
-
-/* Small screens (mobile) */
 @media (max-width: 768px) {
     body {
         font-size: 16px;
@@ -498,7 +473,6 @@ body.dark-mode #dark-mode-toggle .fa-sun {
         font-size: 1.25rem;
     }
 
-    /* ADDED THIS: */
     header h1 {
         font-size: 1.8rem;
     }
@@ -548,10 +522,37 @@ body.dark-mode #dark-mode-toggle .fa-sun {
         left: 0;
         background-color: #343a40;
         text-align: center;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        transform: translateY(-100%);
+        opacity: 0;
     }
 
     .nav-links.active {
         display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+      .nav-links.active li {
+        animation: slideIn 0.3s ease-out forwards;
+        animation-delay: calc(var(--nav-item-delay, 0) * 0.1s);
+    }
+    .nav-links li {
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    /* NEW: Keyframes for the animation */
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .nav-links li {
@@ -567,6 +568,15 @@ body.dark-mode #dark-mode-toggle .fa-sun {
         display: block;
     }
 
+      .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        border-radius: 2px;
+    }
+
     .line1-active {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -576,7 +586,7 @@ body.dark-mode #dark-mode-toggle .fa-sun {
     }
 
     .line3-active {
-        transform: rotate(-45deg) translate(-5px, -6px);
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 
     .projects-grid{
