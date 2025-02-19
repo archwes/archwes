@@ -1,5 +1,5 @@
 # 👋 Hi, I'm Wesley!
-🔭 I’m currently working on [TravelEasy](https://github.com/archwes/TravelEasy)<br>
+🔭 I’m currently working on ❓❓❓<br>
 👯 I’m looking to collaborate on **open-source projects**<br>
 🌱 I’m currently learning [JavaScript](https://eloquentjavascript.net/) and **InfoSec fundamentals**<br>
 📖 I'm also completing my degree in Software Engineering at the Federal University of Technology – Paraná (UTFPR)<br>
